@@ -1,0 +1,25 @@
+
+<div>
+  <h1>Blogpost List</h1>
+</div>
+
+<div>
+  {{#each blogposts as |blogpost|}}
+    <section class="card">
+      <header>
+        <a href="/blogposts/{{id}}">
+          {{id}}.
+          {{blogpost_title}}
+        </a>
+      </header>
+      <div>
+          <p>
+          {{blogpost_text}}
+          </p>
+      </div>
+      <div>
+          <p>Created by: {{user.username}}</p>
+      </div>
+    </section>
+  {{/each}}
+</div>

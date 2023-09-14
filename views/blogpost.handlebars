@@ -1,0 +1,42 @@
+
+<section class="card">
+<header>{{blogpost_title}}</header>
+<p>{{blogpost_text}}</p>
+{{!-- <p>Created by: {{user.name}} | Date: {{format_date createdAt}}</p> --}}
+<p>Created by: {{username}}</p>
+</section>
+<section class="card">
+<form class="new-comment-form">
+<div>
+<label for="new-comment-input">New Comment:</label>
+<textarea id="new-comment-input"></textarea>
+</div>
+<button type="submit">Submit</button>
+</form>
+</section>
+<div>
+    <section class="card">
+    <header><h2>Edit A Post</h2></header>
+    <form class="edit-blog-form">
+        <div>
+            <label for="edit-blog_text">New Blogpost Content:</label>
+            <textarea id="edit-blog_text" rows="3"></textarea>
+        </div>
+        <div>
+            <button type="submit" id="edit-blogpost">Edit Blogpost</button>
+        </div>
+    </form>
+    </section>
+</div>
+<h2>Comment History:</h2>
+<section>
+{{#each comments as |comment|}}
+<section class="card">
+<p>{{comment_text}}</p>
+{{!-- <p>By {{username}} on {{format_date createdAt}}</p> --}}
+<p>By {{user_id}}</p>
+</section>
+{{/each}}
+
+<script src="/js/add-comment.js"></script>
+<script src="/js/edit-blogpost.js"></script>
